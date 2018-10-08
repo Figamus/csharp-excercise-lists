@@ -25,6 +25,8 @@ namespace lists {
             // Being good amateur astronomers, we know that Pluto is now a dwarf planet, so use the Remove() method to eliminate it from the end of planetList.
             planetList.Remove ("Pluto");
 
+
+            // Create another list containing dictionaries. Each dictionary will hold the name of a spacecraft that we have launched, and the name of the planet that it has visited. If it visited more than one planet, just pick one.
             List<Dictionary<string, string>> probes = new List<Dictionary<string, string>> ();
             Dictionary<string, string> viking = new Dictionary<string, string> () { { "Mars", "Viking" }
             };
@@ -36,13 +38,13 @@ namespace lists {
             };
             Dictionary<string, string> venera = new Dictionary<string, string> () { { "Venus", "Venera" }
             };
-
             probes.Add (viking);
             probes.Add (opportunity);
             probes.Add (curiosity);
             probes.Add (mariner);
             probes.Add (venera);
 
+            // Iterate over your list of planets from above, and inside that loop, iterate over the list of dictionaries. Write to the console, for each planet, which satellites have visited which planet.
             foreach (string planet in planetList) {
                 List<string> matchingProbes = new List<string> ();
                 foreach (Dictionary<string, string> probe in probes) {
